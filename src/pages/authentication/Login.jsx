@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import axios from 'axios'
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -7,11 +7,16 @@ function Login() {
  async function loginUser(event) {
     event.preventDefault();
 
-  await axios.post("http://locahost:3000/login",{
+  const response = await axios.post("http://localhost:3000/logintest",{
        email: email ,
        password: password 
   
   });
+  console.log(response.data)
+  if(response.status == 200)
+    {
+localStorage.setItem("token",response.data.token)
+
 alert("User Registered Successfully");
       
            setEmail("");
@@ -19,12 +24,14 @@ alert("User Registered Successfully");
 
    
  }
+else{
+  alert("something went wrong")
+}
 
-
-    // Backend code will go here later
+   }   // Backend code will go here later
 
      
-
+ 
   
 
   return (
