@@ -11,10 +11,10 @@ async function teamdata(event) {
   event.preventDefault();
 
   
-    await axios.post("http://localhost:3000/register", {
-     Teamname: Teamname,
-     Teamcaptain : Teamcaptain,
-     Teamcoach:Teamcoach
+    await axios.post("http://localhost:3000/createTeam", {
+     name: Teamname,
+     captain : Teamcaptain,
+     coach:Teamcoach
      
     });
 

@@ -3,6 +3,7 @@ import './App.css'
 import Login from './pages/authentication/login'
 import Register from './pages/authentication/Register'
 import Team from './pages/Team'
+import Match from './pages/match'
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       <Route path="/login" element={<Login/>} />
        <Route path="/register" element={<Register/>} />
        <Route path ="/team" element ={<Team/>} />
-      
+        <Route path ="/match" element ={<Match/>} />
      </Routes>
      </BrowserRouter>
     </>
